@@ -3,7 +3,7 @@ import Breweries from "./components/breweries/Breweries";
 const App = () => {
   return (
     <>
-      <Breweries></Breweries>
+      <Breweries fetchData={true}></Breweries>
     </>
   );
 };

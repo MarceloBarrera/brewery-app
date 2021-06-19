@@ -13,7 +13,7 @@ import {
 // import logo from "../../assets/some-logo.png";
 import "./Breweries.css";
 
-const Breweries = () => {
+const Breweries = ({ fetchData }: { fetchData: boolean }) => {
   const [state, dispatch] = useReducer(breweriesReducer, {
     ...initialState,
   });
@@ -49,9 +49,11 @@ const Breweries = () => {
 
   useEffect(() => {
     (async function () {
-      loadData();
+      if (fetchData) {
+        loadData();
+      }
     })();
-  }, [loadData]);
+  }, [loadData, fetchData]);
 
   return (
     <div className="container">
