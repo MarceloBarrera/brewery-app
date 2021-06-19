@@ -1,0 +1,53 @@
+.breweries-list {
+  margin-left: -30px;
+}
+
+.breweries-list__item {
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0 20px 0 20px;
+}
+
+.breweries-list__id {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-family: "Brandon Grotesque Medium";
+}
+
+.breweries-list__id span {
+  margin-left: 40px;
+  font-size: 32px;
+}
+
+.breweries-list__date-state {
+  display: flex;
+  align-items: flex-end;
+  align-self: center;
+  flex-direction: column;
+}
+
+.breweries-list__date {
+  font-family: "Brandon Grotesque Regular";
+  font-size: 16px;
+}
+
+.breweries-list__state {
+  font-family: "Brandon Grotesque Bold";
+  font-size: 24px;
+}
+.button-link {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
