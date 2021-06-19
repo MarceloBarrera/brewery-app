@@ -4,6 +4,7 @@ export interface BreweryItem {
   created_at: string;
   phone: string;
   state: string;
+  brewery_type: string;
 }
 export interface IState {
   breweriesList: Array<BreweryItem>;
@@ -11,6 +12,7 @@ export interface IState {
   errorOccurredWhenFetching: boolean;
   orderAsc: boolean;
   orderAscByState: boolean;
+  orderAscByType: boolean;
 }
 
 export const initialState: IState = {
@@ -19,6 +21,7 @@ export const initialState: IState = {
   errorOccurredWhenFetching: false,
   orderAsc: true,
   orderAscByState: false,
+  orderAscByType: false,
 };
 
 export enum ActionTypes {
@@ -27,6 +30,7 @@ export enum ActionTypes {
   SET_END_FETCHING,
   SORT_BY_NAME,
   SORT_BY_STATE,
+  SORT_BY_TYPE,
   FETCHING_FAILED,
 }
 
@@ -49,6 +53,9 @@ export type Action =
     }
   | {
       type: ActionTypes.SORT_BY_STATE;
+    }
+  | {
+      type: ActionTypes.SORT_BY_TYPE;
     };
 
 export const breweriesReducer = (state: IState, action: Action) => {
@@ -68,15 +75,7 @@ export const breweriesReducer = (state: IState, action: Action) => {
     case ActionTypes.SET_END_FETCHING:
       return { ...state, isFetchingBreweries: false };
     case ActionTypes.SORT_BY_NAME:
-      const breweriesOrdered = state.breweriesList.sort((a, b) => {
-        if (a.name > b.name) {
-          return -1;
-        }
-        if (b.name > a.name) {
-          return 1;
-        }
-        return 0;
-      });
+      const breweriesOrdered = sortArrayBy(state.breweriesList, "name");
 
       return {
         ...state,
@@ -86,15 +85,7 @@ export const breweriesReducer = (state: IState, action: Action) => {
         orderAsc: !state.orderAsc,
       };
     case ActionTypes.SORT_BY_STATE:
-      const breweriesOrderedByState = state.breweriesList.sort((a, b) => {
-        if (a.state > b.state) {
-          return -1;
-        }
-        if (b.state > a.state) {
-          return 1;
-        }
-        return 0;
-      });
+      const breweriesOrderedByState = sortArrayBy(state.breweriesList, "state");
 
       return {
         ...state,
@@ -102,6 +93,16 @@ export const breweriesReducer = (state: IState, action: Action) => {
           ? breweriesOrderedByState
           : breweriesOrderedByState.reverse(),
         orderAscByState: !state.orderAscByState,
+      };
+    case ActionTypes.SORT_BY_TYPE:
+      const itemsOrdered = sortArrayBy(state.breweriesList, "brewery_type");
+
+      return {
+        ...state,
+        breweriesList: state.orderAscByType
+          ? itemsOrdered
+          : itemsOrdered.reverse(),
+        orderAscByType: !state.orderAscByType,
       };
     case ActionTypes.FETCHING_FAILED:
       return {
@@ -113,4 +114,17 @@ export const breweriesReducer = (state: IState, action: Action) => {
     default:
       return state;
   }
+};
+
+type FieldName = "state" | "name" | "brewery_type";
+const sortArrayBy = (list: Array<BreweryItem>, fieldName: FieldName) => {
+  return list.sort((a, b) => {
+    if (a[fieldName] > b[fieldName]) {
+      return -1;
+    }
+    if (b[fieldName] > a[fieldName]) {
+      return 1;
+    }
+    return 0;
+  });
 };

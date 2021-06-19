@@ -12,14 +12,14 @@
   padding: 0 20px 0 20px;
 }
 
-.breweries-list__id {
+.breweries-list__type {
   display: flex;
   align-items: center;
   font-size: 40px;
   font-family: "Brandon Grotesque Medium";
 }
 
-.breweries-list__id span {
+.breweries-list__type span {
   margin-left: 40px;
   font-size: 32px;
 }

@@ -29,7 +29,7 @@ const Breweries = () => {
     }
   }, []);
 
-  const sort = () => {
+  const sortByName = () => {
     dispatch({
       type: ActionTypes.SORT_BY_NAME,
     });
@@ -38,6 +38,12 @@ const Breweries = () => {
   const sortByState = () => {
     dispatch({
       type: ActionTypes.SORT_BY_STATE,
+    });
+  };
+
+  const sortByType = () => {
+    dispatch({
+      type: ActionTypes.SORT_BY_TYPE,
     });
   };
 
@@ -64,7 +70,12 @@ const Breweries = () => {
 
       <div className="grid content">
         <div className="list-buttons">
-          <Button onClick={sort}>
+          <Button onClick={sortByType}>
+            Sort by type {state.orderAscByType ? "Descending" : "Ascending"}
+            {/* <Icons.Sort /> */}
+          </Button>
+
+          <Button onClick={sortByName}>
             Sort by name {state.orderAsc ? "Descending" : "Ascending"}
             {/* <Icons.Sort /> */}
           </Button>

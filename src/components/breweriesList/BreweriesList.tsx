@@ -24,14 +24,14 @@ const BreweriesList = ({
                 setShowItemId(item.id);
               }}
             >
-              Details
+              {item.id}
             </button>
 
             {showItemId === item.id && (
               <Brewery item={item} setShowItemId={setShowItemId}></Brewery>
             )}
-            <div className="breweries-list__id">
-              #{item.id}
+            <div className="breweries-list__type">
+              {item.brewery_type}
               <span>{item.name}</span>
             </div>
             <div className="breweries-list__date-state">

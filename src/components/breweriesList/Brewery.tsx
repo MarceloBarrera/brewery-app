@@ -8,6 +8,7 @@ const Brewery = (props: any) => (
     show={true}
   >
     <p> id : {props.item.id}</p>
+    <p> name : {props.item.name}</p>
     <p> brewery_type : {props.item.brewery_type}</p>
     <p> street: {props.item.street}</p>
     <p> address_2: {props.item.address_2} </p>

@@ -12,6 +12,7 @@ const mockBreweryItem1 = {
   created_at: dateCreatedAt,
   phone: "01888882233",
   state: "California",
+  brewery_type: "planning",
 };
 const mockBreweryItem2 = {
   id: "11",
@@ -19,6 +20,7 @@ const mockBreweryItem2 = {
   created_at: dateCreatedAt,
   phone: "01888882299",
   state: "New York",
+  brewery_type: "brewpub",
 };
 
 it("should fetching started", () => {
@@ -134,4 +136,40 @@ it("should sort list by state and ascending", () => {
   );
 
   expect(newState.breweriesList).toEqual([mockBreweryItem1, mockBreweryItem2]);
+});
+
+it("should sort list by type and descending", () => {
+  const action: Action = {
+    type: ActionTypes.SORT_BY_TYPE,
+  };
+
+  const newState = breweriesReducer(
+    {
+      ...initialState,
+      orderAscByType: true,
+      breweriesList: [mockBreweryItem2, mockBreweryItem1],
+    },
+    action
+  );
+
+  expect(newState.orderAscByType).toEqual(false);
+  expect(newState.breweriesList).toEqual([mockBreweryItem1, mockBreweryItem2]);
+});
+
+it("should sort list by type and ascending", () => {
+  const action: Action = {
+    type: ActionTypes.SORT_BY_TYPE,
+  };
+
+  let newState = breweriesReducer(
+    {
+      ...initialState,
+      orderAscByType: false,
+      breweriesList: [mockBreweryItem2, mockBreweryItem1],
+    },
+    action
+  );
+
+  expect(newState.orderAscByType).toEqual(true);
+  expect(newState.breweriesList).toEqual([mockBreweryItem2, mockBreweryItem1]);
 });
