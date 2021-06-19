@@ -3,14 +3,14 @@ import API from "../../Api";
 
 import BreweriesList from "../breweriesList/BreweriesList";
 import Button from "../buttons/Button";
-// import * as Icons from "./Icons";
+import * as Icons from "../icons/icons";
 
 import {
   breweriesReducer,
   initialState,
   ActionTypes,
 } from "../breweries/BreweriesReducer";
-// import logo from "../../assets/some-logo.png";
+import logo from "../../assets/brewery-logo.svg";
 import "./Breweries.css";
 
 const Breweries = ({ fetchData }: { fetchData: boolean }) => {
@@ -60,12 +60,12 @@ const Breweries = ({ fetchData }: { fetchData: boolean }) => {
       <div className="grid header">
         <div className="header__inner">
           <div className="header__logo">
-            {/* <img src={logo} alt="logo brewery"></img> */}
+            <img src={logo} alt="logo brewery"></img>
             <span>BREWERIES</span>
           </div>
           <Button className="header__refresh-button" onClick={loadData}>
             Reload Data
-            {/* <Icons.Refresh /> */}
+            <Icons.Refresh />
           </Button>
         </div>
       </div>
@@ -73,18 +73,18 @@ const Breweries = ({ fetchData }: { fetchData: boolean }) => {
       <div className="grid content">
         <div className="list-buttons">
           <Button onClick={sortByType}>
-            Sort by type {state.orderAscByType ? "Descending" : "Ascending"}
-            {/* <Icons.Sort /> */}
+            Sort by type {state.orderAscByType ? "Desc" : "Asc"}
+            <Icons.Sort />
           </Button>
 
           <Button onClick={sortByName}>
-            Sort by name {state.orderAsc ? "Descending" : "Ascending"}
-            {/* <Icons.Sort /> */}
+            Sort by name {state.orderAsc ? "Desc" : "Asc"}
+            <Icons.Sort />
           </Button>
 
           <Button onClick={sortByState}>
-            Sort by state {state.orderAscByState ? "Descending" : "Ascending"}
-            {/* <Icons.Sort /> */}
+            Sort by state {state.orderAscByState ? "Desc" : "Asc"}
+            <Icons.Sort />
           </Button>
         </div>
         {state.isFetchingBreweries ? (

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when no fetching data 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="grid header"
+  >
+    <div
+      className="header__inner"
+    >
+      <div
+        className="header__logo"
+      >
+        <img
+          alt="logo brewery"
+          src="brewery-logo.svg"
+        />
+        <span>
+          BREWERIES
+        </span>
+      </div>
+      <button
+        className="header__refresh-button button"
+        onClick={[Function]}
+      >
+        Reload Data
+        <img
+          alt="icon refresh"
+          src="refresh.png"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="grid content"
+  >
+    <div
+      className="list-buttons"
+    >
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Sort by type 
+        Asc
+        <img
+          alt="icon sort"
+          src="sort.png"
+        />
+      </button>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Sort by name 
+        Desc
+        <img
+          alt="icon sort"
+          src="sort.png"
+        />
+      </button>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Sort by state 
+        Asc
+        <img
+          alt="icon sort"
+          src="sort.png"
+        />
+      </button>
+    </div>
+    <ul
+      className="breweries-list"
+    >
+      No Breweries yet
+    </ul>
+    
+  </div>
+</div>
+`;
