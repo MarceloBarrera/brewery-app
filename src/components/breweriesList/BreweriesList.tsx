@@ -33,6 +33,7 @@ const BreweriesList = ({
             <div className="breweries-list__type">
               {item.brewery_type}
               <span>{item.name}</span>
+              <span>{item.country}</span>
             </div>
             <div className="breweries-list__date-state">
               <div className="breweries-list__date">

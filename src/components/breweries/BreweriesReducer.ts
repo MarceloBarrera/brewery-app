@@ -4,6 +4,7 @@ export interface BreweryItem {
   created_at: string;
   phone: string;
   state: string;
+  country: string;
   brewery_type: string;
 }
 export interface IState {

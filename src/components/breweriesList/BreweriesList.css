@@ -15,13 +15,13 @@
 .breweries-list__type {
   display: flex;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Brandon Grotesque Medium";
 }
 
 .breweries-list__type span {
   margin-left: 40px;
-  font-size: 32px;
+  font-size: 22px;
 }
 
 .breweries-list__date-state {
