@@ -1,0 +1,13 @@
+.brewery-item {
+  display: flex;
+  justify-content: space-between;
+}
+.brewery-item > div {
+  flex: 1;
+}
+.brewery-item > div > div {
+  width: 250px;
+}
+.brewery-item > div > div > span {
+  font-weight: bold;
+}

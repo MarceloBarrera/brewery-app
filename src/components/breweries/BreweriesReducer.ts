@@ -3,9 +3,20 @@ export interface BreweryItem {
   name: string;
   created_at: string;
   phone: string;
+  city: string;
+  county_province: string;
   state: string;
   country: string;
   brewery_type: string;
+  street: string;
+  address_2: string;
+  address_3: string;
+
+  postal_code: string;
+  longitude: string;
+  latitude: string;
+  website_url: string;
+  updated_at: string;
 }
 export interface IState {
   breweriesList: Array<BreweryItem>;

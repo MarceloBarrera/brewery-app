@@ -1,6 +1,7 @@
 import React, { ReactChild, ReactChildren } from "react";
 import "./Modal.css";
 import ReactDOM from "react-dom";
+import Button from "../buttons/Button";
 
 const Modal = ({
   onClose,
@@ -17,9 +18,7 @@ const Modal = ({
     <div className={showHideClassName}>
       <div className="modal-main">
         {children}
-        <button type="button" onClick={onClose}>
-          Close
-        </button>
+        <Button onClick={onClose}>Close</Button>
       </div>
     </div>,
     document.getElementById("root") as HTMLElement
