@@ -13,6 +13,17 @@ const mockBreweryItem1 = {
   phone: "01888882233",
   state: "California",
   brewery_type: "planning",
+  city: "foo",
+  county_province: "foo",
+  country: "bar",
+  street: "foo",
+  address_2: "",
+  address_3: "",
+  postal_code: "",
+  longitude: "",
+  latitude: "",
+  website_url: "",
+  updated_at: "",
 };
 const mockBreweryItem2 = {
   id: "11",
@@ -21,6 +32,17 @@ const mockBreweryItem2 = {
   phone: "01888882299",
   state: "New York",
   brewery_type: "brewpub",
+  city: "foo",
+  county_province: "foo",
+  country: "bar",
+  street: "foo",
+  address_2: "",
+  address_3: "",
+  postal_code: "",
+  longitude: "",
+  latitude: "",
+  website_url: "",
+  updated_at: "",
 };
 
 it("should fetching started", () => {
