@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+chromedriver.log*
+
+# EndToEnd tests output
+tests_output
+~/chromeTemp

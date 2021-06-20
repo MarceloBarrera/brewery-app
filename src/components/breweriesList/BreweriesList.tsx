@@ -15,9 +15,13 @@ const BreweriesList = ({
   const [showItemId, setShowItemId] = useState("");
   return (
     <ul className="breweries-list">
-      {breweries.map((item, index) => {
+      {breweries.map((item) => {
         return (
-          <li key={index} className="breweries-list__item">
+          <li
+            key={item.id}
+            className="breweries-list__item"
+            data-test-id={item.id}
+          >
             <button
               className="button-link"
               onClick={(e) => {

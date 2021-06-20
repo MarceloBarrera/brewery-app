@@ -1,0 +1,49 @@
+{
+  "src_folders": ["tests/e2e"],
+  "page_objects_path": "tests/page-objects",
+  "globals_path": "./tests/globals.js",
+
+  "selenium": {
+    "start_process": false
+  },
+
+  "webdriver": {
+    "start_process": true,
+    "server_path": "node_modules/chromedriver/lib/chromedriver/chromedriver",
+    "port": 9515
+  },
+
+  "test_settings": {
+    "default": {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "chromeOptions": {
+          "args": [
+            "allow-file-access-from-files",
+            "disable-web-security",
+            "user-data-dir=~/chromeTemp",
+            "allow-cross-origin-auth-prompt",
+            "unsafely-treat-insecure-origin-as-secure",
+            "remote-debugging-port=9222",
+            "no-sandbox",
+            "disable-gpu",
+            "ignore-certificate-errors",
+            "disable-local-storage"
+          ],
+          "prefs": {
+            "intl.accept_languages": "nn"
+          },
+          "binary": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        }
+      }
+    },
+    "chrome-headless": {
+      "desiredCapabilities": {
+        "extends": "chrome",
+        "chromeOptions": {
+          "args": ["headless"]
+        }
+      }
+    }
+  }
+}

@@ -20,6 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-mac-e2e": "./node_modules/.bin/nightwatch tests/e2e/",
+    "test-mac-e2e:headless": "./node_modules/.bin/nightwatch -e chrome-headless tests/e2e/",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,7 +43,9 @@
     ]
   },
   "devDependencies": {
+    "chromedriver": "^91.0.1",
     "classnames": "^2.3.1",
+    "nightwatch": "^1.7.5",
     "react-test-renderer": "^16.13.1"
   }
 }
