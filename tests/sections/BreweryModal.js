@@ -6,6 +6,6 @@ module.exports = {
     },
   },
   elements: {
-    closeButton: "[data-test-close]",
+    closeButton: ".button",
   },
 };
