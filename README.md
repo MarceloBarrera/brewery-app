@@ -19,13 +19,13 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run test-mac-e2e`
+### `npm run test-e2e`
 
-Runs e2e tests using [Nightwatch](https://nightwatchjs.org/) test runner using Chrome driver and MAC OS. App should be running in a different process or browser.
+Runs e2e tests using [Nightwatch](https://nightwatchjs.org/) test runner using Chrome driver. App should be running in a different process or browser.
 
-### `npm run test-mac-e2e:headless`
+### `npm run test-e2e:headless`
 
-Runs e2e tests in a headless manner using [Nightwatch](https://nightwatchjs.org/) test runner using Chrome driver and MAC OS. App should be running in a different process or browser.
+Runs e2e tests in a headless manner using [Nightwatch](https://nightwatchjs.org/) test runner using Chrome driver. App should be running in a different process or browser.
 
 ### `npm run build`
 
