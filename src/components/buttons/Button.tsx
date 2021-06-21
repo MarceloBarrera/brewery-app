@@ -10,7 +10,11 @@ export interface LayoutProps {
 
 const Button = ({ children, className, onClick }: LayoutProps) => {
   return (
-    <button onClick={onClick} className={cn(className, "button")}>
+    <button
+      onClick={onClick}
+      className={cn(className, "button")}
+      data-test-close
+    >
       {children}
     </button>
   );

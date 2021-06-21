@@ -18,6 +18,9 @@ module.exports = {
     expectBreweryModalVisible() {
       return this.expect.section("@breweryModal").to.be.visible;
     },
+    expectBreweryModalNotPresent() {
+      return this.expect.section("@breweryModal").not.to.be.present;
+    },
   },
   sections: {
     breweryModal: BreweryModal,

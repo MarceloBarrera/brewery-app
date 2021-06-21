@@ -1,6 +1,7 @@
 module.exports = {
   before(client) {
     this.breweries = client.page.Breweries();
+    this.breweryModal = this.breweries.section.breweryModal;
   },
   "start app": function () {
     this.breweries.navigate();
@@ -10,8 +11,14 @@ module.exports = {
     this.breweries.waitForElementVisible("@breweriesList");
     this.breweries.openBreweryDetails(breweryId);
   },
-  "brewery details should be display": function () {
+  "brewery modal details should be display": function () {
     this.breweries.expectBreweryModalVisible();
+  },
+  "close modal": function () {
+    this.breweryModal.closeModal();
+  },
+  "brewery modal details should not be present": function () {
+    this.breweries.expectBreweryModalNotPresent();
   },
   after(client) {
     client.end();
