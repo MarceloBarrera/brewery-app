@@ -10,8 +10,19 @@ export default {
     };
 
     try {
-      const response = await fetch(`${rootApiUrl}/breweries`, requestOptions);
-      return response.json();
+      const response = await fetch(
+        `${rootApiUrl}/breweries?per_page=50&page=1`,
+        requestOptions
+      );
+      const response2 = await fetch(
+        `${rootApiUrl}/breweries?per_page=50&page=2`,
+        requestOptions
+      );
+
+      const resposeJson = await response.json();
+      const resposeJson2 = await response2.json();
+
+      return [...resposeJson, ...resposeJson2];
     } catch (error) {
       console.log("error", error);
     }
