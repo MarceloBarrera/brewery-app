@@ -41,3 +41,20 @@ export const calculateRepayments = (
     repayments,
   };
 };
+
+type Limitations = {
+  amountMin: number;
+  amountMax: number;
+  durationMin: number;
+  durationMax: number;
+};
+export const checkLimits = (
+  amountRequested: number,
+  duration: number,
+  limitations: Limitations
+) => {
+  if (duration < limitations.durationMin) {
+    return `duration: ${duration} cannot be less than: ${limitations.durationMin}`;
+  }
+  return "";
+};
