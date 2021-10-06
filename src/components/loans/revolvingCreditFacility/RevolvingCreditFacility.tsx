@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../loans/Loans.css";
+import { LimitationItem } from "../LoansReducer";
 import {
   calculateRepayments,
   checkLimits,
@@ -8,10 +9,12 @@ import {
 const RevolvingCreditFacility = ({
   amountRequested,
   duration,
+  limitation,
   interestRate = 3,
 }: {
   amountRequested: number;
   duration: number;
+  limitation: LimitationItem | undefined;
   interestRate?: number;
 }) => {
   const [interest, setInterest] = useState<number>(interestRate);
@@ -21,12 +24,7 @@ const RevolvingCreditFacility = ({
 
   const calculations = calculateRepayments(amountRequested, duration, interest);
 
-  const showErrorMessage = checkLimits(amountRequested, duration, {
-    amountMin: 1000,
-    amountMax: 150000,
-    durationMin: 1,
-    durationMax: 12,
-  });
+  const showErrorMessage = checkLimits(amountRequested, duration, limitation);
   return (
     <div style={{ backgroundColor: "lightsalmon" }}>
       <div>
