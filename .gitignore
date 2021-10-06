@@ -26,3 +26,4 @@ chromedriver.log*
 # EndToEnd tests output
 tests_output
 ~/chromeTemp
+.idea
