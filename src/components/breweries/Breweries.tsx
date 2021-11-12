@@ -91,7 +91,9 @@ const Breweries = ({ fetchData }: { fetchData: boolean }) => {
           <div>Fetching...</div>
         ) : (
           <BreweriesList
-            breweries={state.breweriesList}
+            breweries={() => {
+              return state.breweriesList;
+            }}
             errorOcurred={state.errorOccurredWhenFetching}
           ></BreweriesList>
         )}
